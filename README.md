@@ -1,7 +1,7 @@
 # foldingathome-arm64
 ### `Every penny counts - even a tiny Raspberry Pi`
 
-Container deployment for Folding@Home, using ***foldingathome.org*** [official fahclient release here](https://download.foldingathome.org/releases/beta/release/fahclient/debian-stable-arm64/v7.6/)  
+Container deployment for `Folding@Home`, using ***foldingathome.org*** [official fahclient release here](https://download.foldingathome.org/releases/beta/release/fahclient/debian-stable-arm64/v7.6/)  
 
 Develop environment : `Raspberry Pi 4B(4GB)` `Ubuntu 20.04.1 LTS` `Linux 5.4.0-1025-raspi`  
 
