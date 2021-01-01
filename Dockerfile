@@ -32,4 +32,4 @@ RUN chmod u+x /root/init.sh
 
 CMD /root/init.sh
 
-EXPOSE 739
+EXPOSE 7396
