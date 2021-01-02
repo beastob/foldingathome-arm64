@@ -60,6 +60,6 @@ Port number: `7396`
 | FOLD_ALLOW_IP  |   |  whitelist IP addresses for accessing the web console  |
 
 ## TODO list
-- Trim down container image size
+- ~~Trim down container image size~~ (~150MB -> ~90MB)
 - Kubernetes deployment
 - Helm chart
