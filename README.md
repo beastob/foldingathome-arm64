@@ -56,7 +56,7 @@ Port number: `7396`
 | FOLD_USER  | Anonymous  | user name |
 | FOLD_TEAM  | 0  | team number |
 | FOLD_ANON  | true | contribute as anonymous  |
-| FOLD_POWER  | FULL  | 'LIGHT',"MEDIUM','FULL' - how much CPU power available to fahclient |
+| FOLD_POWER  | full  | 'light',"medium','full' - how much CPU power available to fahclient |
 | FOLD_ALLOW_IP  |   |  whitelist IP addresses for accessing the web console  |
 
 ## TODO list
