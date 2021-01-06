@@ -15,6 +15,7 @@ cat <<EOF | tee /etc/fahclient/config.xml
   <power v='$FOLD_POWER'/>
 
   <!-- User Information -->
+  <passkey v='$FOLD_PASSKEY'/>
   <user v='$FOLD_USER'/>
 
   <!-- Web Server -->
