@@ -36,8 +36,8 @@ You should now be able to access the web console via `http://<server-ip>:7396`
 
 ### Deploy container with custom ENV config
 ```shell script
-$ docker run -d -p 7396:7396 \
-  -e FOLD_USER=elonmusk -e FOLD_ALLOW_IP='192.168.1.100 192.168.1.101' \
+$ docker run -d -p 7396:7396 --restart=always \
+  -e FOLD_USER=elonmusk -e FOLD_PASSKEY=xxxxxxxxxx -e FOLD_ANON=false -e FOLD_ALLOW_IP='192.168.1.101' \
   beastob/foldingathome-arm64
 ```
 
@@ -49,12 +49,12 @@ Currently using `debian-stable-arm64` release from ***foldingathome.org*** [rele
 Port number: `7396`
 
 ### ENV
-***\*Passkey is not implemented***
 
 |     ENV    | default value  | description  |
 |:----------:|:--------------:|:------------:|  
 | FOLD_USER  | Anonymous  | user name |
 | FOLD_TEAM  | 0  | team number |
+| FOLD_PASSKEY |   | passkey for your account |
 | FOLD_ANON  | true | contribute as anonymous  |
 | FOLD_POWER  | full  | 'light',"medium','full' - how much CPU power available to fahclient |
 | FOLD_ALLOW_IP  |   |  whitelist IP addresses for accessing the web console  |
