@@ -13,7 +13,7 @@ fahclient versions :
 | Success  | `7.6.20`  |
 | Error | `7.6.21` | 
 
-## Objectiive
+## Objective
 The main objective of this project is to make use of as much as resources we have to fight against diseases, with the help of the excellent tool `folding@home` has already provided.  
 
 My project goal is aiming for Kubernetes deployment with Helm, and any help or suggestions would be very appreciated as I am only just stepping into k8s.
