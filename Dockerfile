@@ -2,7 +2,7 @@ FROM debian:stable as builder
 
 # fahclient version
 ARG CLIENT_MAJOR_VERSION=7.6
-ARG CLIENT_MINOR_VERION=20
+ARG CLIENT_MINOR_VERION=21
 
 USER root
 RUN apt update && \
