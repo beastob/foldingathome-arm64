@@ -17,6 +17,7 @@ cat <<EOF | tee /etc/fahclient/config.xml
   <!-- User Information -->
   <passkey v='$FOLD_PASSKEY'/>
   <user v='$FOLD_USER'/>
+  <team v='$FOLD_TEAM'/>
 
   <!-- Web Server -->
   <web-allow v='127.0.0.1 $FOLD_ALLOW_IP'/>
