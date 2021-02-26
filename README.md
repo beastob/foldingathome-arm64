@@ -10,8 +10,8 @@ fahclient versions :
 
 |     State    | Version  |
 |:----------:|:--------------:|
-| Success  | `7.6.20`  |
-| Error | `7.6.21` | 
+| Success  | `7.6.20`,`7.6.21`  |
+| Error |  | 
 
 ## Objective
 The main objective of this project is to make use of as much as resources we have to fight against diseases, with the help of the excellent tool `folding@home` has already provided.  
