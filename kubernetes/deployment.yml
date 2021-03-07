@@ -16,6 +16,13 @@ spec:
       labels:
         app: foldingathome
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: "kubernetes.io/hostname"
+              labelSelector:
+                matchLabels:
+                  app: foldingathome
       containers:
         - image: beastob/foldingathome-arm64
           name: foldingathome
