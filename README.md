@@ -61,5 +61,5 @@ Port number: `7396`
 
 ## TODO list
 - ~~Trim down container image size~~ (~150MB -> ~90MB)
-- Kubernetes deployment
+- ~~Kubernetes deployment~~
 - Helm chart
