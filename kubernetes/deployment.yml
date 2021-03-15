@@ -29,7 +29,13 @@ spec:
           ports:
             - containerPort: 7396
               name: http
-          resources: {}
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "4"
+            requests:
+              memory: "500Mi"
+              cpu: "2"
           livenessProbe:
             tcpSocket:
               port: 7396
