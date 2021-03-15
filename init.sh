@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -z "$FOLD_USER" ]; then
+  export FOLD_ANON=false
+fi
+
 cat <<EOF | tee /etc/fahclient/config.xml
 <config>
   <!-- Client Control -->

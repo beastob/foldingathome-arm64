@@ -25,7 +25,7 @@ LABEL maintainer="beastob.mark1@gmail.com"
 
 # Default configuration parameters for folding client
 ENV FOLD_ANON=true \
-    FOLD_USER=Anonymous \
+    FOLD_USER='' \
     FOLD_PASSKEY='' \
     FOLD_TEAM=0 \
     FOLD_POWER=full \
