@@ -10,11 +10,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: foldingathome
+      app.kubernetes.io/name: foldingathome
   template:
     metadata:
       labels:
-        app: foldingathome
+        app.kubernetes.io/name: foldingathome
     spec:
       affinity:
         podAntiAffinity:
@@ -22,7 +22,7 @@ spec:
             - topologyKey: "kubernetes.io/hostname"
               labelSelector:
                 matchLabels:
-                  app: foldingathome
+                  app.kubernetes.io/name: foldingathome
       containers:
         - image: beastob/foldingathome-arm64
           name: foldingathome
@@ -40,7 +40,7 @@ spec:
             tcpSocket:
               port: 7396
             initialDelaySeconds: 10
-            periodSeconds: 20
+            periodSeconds: 10
           env:
             - name: FOLD_ANON
               valueFrom:
