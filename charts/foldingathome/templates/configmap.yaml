@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "foldingathome.fullname" . }}-configmap
+data:
+  FOLD_ANON: "{{ .Values.foldAnonymous }}"
+  FOLD_TEAM: {{ .Values.foldTeam | quote }}
+  FOLD_POWER: {{ .Values.foldPower | quote }}
+  FOLD_ALLOW_IP: {{ .Values.foldAllowIP | quote }}

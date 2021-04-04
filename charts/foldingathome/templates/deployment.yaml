@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "foldingathome.fullname" . }}
+  labels:
+    {{- include "foldingathome.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "foldingathome.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "foldingathome.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "foldingathome.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 7396
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          env:
+            - name: FOLD_ANON
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-configmap
+                  key: FOLD_ANON
+            - name: FOLD_TEAM
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-configmap
+                  key: FOLD_TEAM
+            - name: FOLD_POWER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-configmap
+                  key: FOLD_POWER
+            - name: FOLD_ALLOW_IP
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-configmap
+                  key: FOLD_ALLOW_IP
+            - name: FOLD_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-secret
+                  key: FOLD_USER
+            - name: FOLD_PASSKEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "foldingathome.fullname" . }}-secret
+                  key: FOLD_PASSKEY
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
