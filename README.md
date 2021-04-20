@@ -56,10 +56,10 @@ Port number: `7396`
 | FOLD_TEAM  | 0  | team number |
 | FOLD_PASSKEY |   | passkey for your account |
 | FOLD_ANON  | true | contribute as anonymous  |
-| FOLD_POWER  | full  | 'light',"medium','full' - how much CPU power available to fahclient |
+| FOLD_POWER  | full  | 'light',"medium','full' - how much CPU power available for fahclient |
 | FOLD_ALLOW_IP  |   |  whitelist IP addresses for accessing the web console  |
 
 ## TODO list
 - ~~Trim down container image size~~ (~150MB -> ~90MB)
 - ~~Kubernetes deployment~~
-- Helm chart
+- ~~Helm chart~~
