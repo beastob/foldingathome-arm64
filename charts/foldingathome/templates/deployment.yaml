@@ -38,12 +38,10 @@ spec:
               containerPort: 7396
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: http
           readinessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: http
           env:
             - name: FOLD_ANON
