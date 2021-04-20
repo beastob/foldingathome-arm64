@@ -63,3 +63,12 @@ Port number: `7396`
 - ~~Trim down container image size~~ (~150MB -> ~90MB)
 - ~~Kubernetes deployment~~
 - ~~Helm chart~~
+
+
+## Publish Chart
+
+```shell
+$ helm package charts/foldingathome
+$ mv charts/foldingathome-*.tgz docs
+$ helm repo index docs --url https://beastob.github.io/foldingathome-arm64/
+```
