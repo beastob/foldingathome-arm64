@@ -17,8 +17,10 @@ fahclient versions :
 The main objective of this project is to make use of as much as resources we have to fight against diseases, with the help of the excellent tool `folding@home` has already provided.  
 
 My project goal is aiming for Kubernetes deployment with Helm, and any help or suggestions would be very appreciated as I am only just stepping into k8s.
+## Helm Chart Deployment
+https://github.com/beastob/helm-charts/tree/master/foldingathome
 
-## Deploy container
+## Docker deployment
 ### Pull latest image
 ```shell script
 $ docker pull beastob/foldingathome-arm64
